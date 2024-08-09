@@ -52,7 +52,7 @@ def declare_actions(
         pkg_name='omni_base_controller_configuration',
         paths=['launch', 'default_controllers.launch.py'],
         launch_arguments={
-            'is_public_sim': launch_args.is_public_sim,
+            'use_sim_time': launch_args.use_sim_time,
         }
     )
 
