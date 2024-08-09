@@ -19,15 +19,15 @@ from ament_index_python.packages import get_package_share_directory
 from controller_manager.launch_utils import generate_load_controller_launch_description
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, GroupAction
-from launch.conditions import UnlessCondition
 from launch.substitutions import LaunchConfiguration
+from launch.conditions import UnlessCondition
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
 
 
 @dataclass(frozen=True)
 class LaunchArguments(LaunchArgumentsBase):
-    is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
+    use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
 
 
 def generate_launch_description():
@@ -53,12 +53,11 @@ def declare_actions(
         [
             generate_load_controller_launch_description(
                 controller_name='mobile_base_controller',
-                controller_type='omni_drive_controller/OmniDriveController',
                 controller_params_file=os.path.join(
                     pkg_share_folder, 'config', 'mobile_base_controller.yaml')
             )
         ],
-        condition=UnlessCondition(LaunchConfiguration('is_public_sim'))
+        condition=UnlessCondition(LaunchConfiguration('use_sim_time'))
     )
     launch_description.add_action(base_controller)
 
@@ -67,7 +66,6 @@ def declare_actions(
         [
             generate_load_controller_launch_description(
                 controller_name='joint_state_broadcaster',
-                controller_type='joint_state_broadcaster/JointStateBroadcaster',
                 controller_params_file=os.path.join(
                     pkg_share_folder, 'config', 'joint_state_broadcaster.yaml'))
         ],
@@ -79,7 +77,6 @@ def declare_actions(
         [
             generate_load_controller_launch_description(
                 controller_name='imu_sensor_broadcaster',
-                controller_type='imu_sensor_broadcaster/IMUSensorBroadcaster',
                 controller_params_file=os.path.join(
                     pkg_share_folder, 'config', 'imu_sensor_broadcaster.yaml'))
 
