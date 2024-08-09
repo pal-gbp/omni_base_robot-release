@@ -2,6 +2,14 @@
 Changelog for package omni_base_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.0 (2024-08-08)
+------------------
+* start mobile_base_controller only for real robot
+* Contributors: antoniobrandi
+
+2.1.0 (2024-08-07)
+------------------
+
 2.0.19 (2024-07-09)
 -------------------
 * Add warning for pal_module_cmake not found
