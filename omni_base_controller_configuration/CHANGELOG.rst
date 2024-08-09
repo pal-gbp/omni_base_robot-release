@@ -2,6 +2,18 @@
 Changelog for package omni_base_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.0 (2024-08-08)
+------------------
+* Use unlesscondition
+* start mobile_base_controller only for real robot
+* Contributors: David ter Kuile, antoniobrandi
+
+2.1.0 (2024-08-07)
+------------------
+* Use controller_type from the controllers config
+* Remove use_stamped_vel parameter
+* Contributors: Noel Jimenez
+
 2.0.19 (2024-07-09)
 -------------------
 * Add warning for pal_module_cmake not found
