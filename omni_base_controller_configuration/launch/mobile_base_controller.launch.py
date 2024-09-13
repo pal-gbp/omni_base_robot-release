@@ -19,9 +19,12 @@ from ament_index_python.packages import get_package_share_directory
 from controller_manager.launch_utils import generate_load_controller_launch_description
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, GroupAction
+from launch.substitutions import LaunchConfiguration
+from launch.conditions import IfCondition, UnlessCondition
+from launch.substitutions import PythonExpression
+from launch_ros.actions import Node
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
-from launch_pal.include_utils import include_scoped_launch_py_description
 
 
 @dataclass(frozen=True)
@@ -46,41 +49,40 @@ def generate_launch_description():
 def declare_actions(
     launch_description: LaunchDescription, launch_args: LaunchArguments
 ):
-    pkg_name = 'omni_base_controller_configuration'
-    pkg_share_folder = get_package_share_directory(pkg_name)
+    pkg_share_folder = get_package_share_directory('omni_base_controller_configuration')
+
+    # Temporary Fix when using rolling version of ros2 control
+    twist_relay = Node(
+        package='topic_tools',
+        executable='relay_field',
+        name='twist_relay',
+        arguments=['/mobile_base_controller/cmd_vel', '/mobile_base_controller/cmd_vel_unstamped',
+                   'geometry_msgs/Twist', '{linear: m.twist.linear, angular: m.twist.angular}'],
+        condition=IfCondition(
+            PythonExpression(
+                [
+                    "'",
+                    LaunchConfiguration('is_public_sim'),
+                    "' != 'True' and '",
+                    LaunchConfiguration('use_sim_time'),
+                    "' == 'True'"
+                ]
+            )
+        ))
+
+    launch_description.add_action(twist_relay)
 
     # Base controller
-    base_controller = include_scoped_launch_py_description(
-        pkg_name=pkg_name,
-        paths=['launch', 'mobile_base_controller.launch.py'],
-        launch_arguments={
-            'use_sim_time': launch_args.use_sim_time,
-            'is_public_sim': launch_args.is_public_sim,
-        }
+    base_controller = GroupAction(
+        [
+            generate_load_controller_launch_description(
+                controller_name='mobile_base_controller',
+                controller_params_file=os.path.join(
+                    pkg_share_folder, 'config', 'mobile_base_controller.yaml')
+            )
+        ],
+        condition=UnlessCondition(LaunchConfiguration('use_sim_time'))
     )
     launch_description.add_action(base_controller)
-
-    # Joint state broadcaster
-    joint_state_broadcaster = GroupAction(
-        [
-            generate_load_controller_launch_description(
-                controller_name='joint_state_broadcaster',
-                controller_params_file=os.path.join(
-                    pkg_share_folder, 'config', 'joint_state_broadcaster.yaml'))
-        ],
-    )
-    launch_description.add_action(joint_state_broadcaster)
-
-    # IMU sensor broadcaster
-    imu_sensor_broadcaster = GroupAction(
-        [
-            generate_load_controller_launch_description(
-                controller_name='imu_sensor_broadcaster',
-                controller_params_file=os.path.join(
-                    pkg_share_folder, 'config', 'imu_sensor_broadcaster.yaml'))
-
-        ],
-    )
-    launch_description.add_action(imu_sensor_broadcaster)
 
     return
