@@ -2,6 +2,16 @@
 Changelog for package omni_base_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.4.0 (2024-09-04)
+------------------
+* Add slash to node names on parameter files
+* Contributors: Noel Jimenez
+
+2.3.0 (2024-08-29)
+------------------
+* use relay for cmd_vel message
+* Contributors: David ter Kuile
+
 2.2.0 (2024-08-08)
 ------------------
 * start mobile_base_controller only for real robot
