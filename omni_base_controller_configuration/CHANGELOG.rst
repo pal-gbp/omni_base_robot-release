@@ -2,6 +2,17 @@
 Changelog for package omni_base_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.4.0 (2024-09-04)
+------------------
+* Only relay cmd_vel topic in simulation
+* Contributors: David ter Kuile
+
+2.3.0 (2024-08-29)
+------------------
+* use relay for cmd_vel message
+* Refactor mobile base controller
+* Contributors: David ter Kuile
+
 2.2.0 (2024-08-08)
 ------------------
 * Use unlesscondition
