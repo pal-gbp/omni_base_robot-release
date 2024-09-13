@@ -53,6 +53,7 @@ def declare_actions(
         paths=['launch', 'default_controllers.launch.py'],
         launch_arguments={
             'use_sim_time': launch_args.use_sim_time,
+            'is_public_sim': launch_args.is_public_sim,
         }
     )
 
