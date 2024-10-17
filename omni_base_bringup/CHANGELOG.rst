@@ -2,6 +2,16 @@
 Changelog for package omni_base_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.4.1 (2024-10-15)
+------------------
+* Merge branch 'fix/aca/joy-turbo' into 'humble-devel'
+  using tiago config for joy turbo
+  See merge request robots/omni_base_robot!45
+* cosmetic
+* using same configuration of TIAGo
+* using tiago config for joy turbo
+* Contributors: andreacapodacqua
+
 2.4.0 (2024-09-04)
 ------------------
 * Add slash to node names on parameter files
