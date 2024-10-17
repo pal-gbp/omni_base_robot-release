@@ -2,6 +2,9 @@
 Changelog for package omni_base_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.4.1 (2024-10-15)
+------------------
+
 2.4.0 (2024-09-04)
 ------------------
 * Only relay cmd_vel topic in simulation
