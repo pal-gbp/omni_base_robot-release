@@ -2,6 +2,9 @@
 Changelog for package omni_base_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.4.1 (2024-10-15)
+------------------
+
 2.4.0 (2024-09-04)
 ------------------
 * Add slash to node names on parameter files
