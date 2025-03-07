@@ -2,6 +2,37 @@
 Changelog for package omni_base_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.9.0 (2025-02-24)
+------------------
+
+2.8.0 (2025-01-23)
+------------------
+
+2.7.0 (2025-01-22)
+------------------
+
+2.6.0 (2025-01-16)
+------------------
+
+2.5.2 (2024-11-22)
+------------------
+* Merge branch 'abr/fix/twist-relay' into 'humble-devel'
+  using execute process to respawn twist_relay node
+  See merge request robots/omni_base_robot!53
+* using execute process to respawn twist_relay node
+* Contributors: antoniobrandi
+
+2.5.1 (2024-11-08)
+------------------
+
+2.5.0 (2024-11-06)
+------------------
+* Set update_rate for joint_state_broadcaster
+* Contributors: Noel Jimenez
+
+2.4.2 (2024-10-18)
+------------------
+
 2.4.1 (2024-10-15)
 ------------------
 
