@@ -2,6 +2,47 @@
 Changelog for package omni_base_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.9.0 (2025-02-24)
+------------------
+* updated maintainer
+* Contributors: andreacapodacqua
+
+2.8.0 (2025-01-23)
+------------------
+* support cobra and camera model
+* Contributors: antoniobrandi
+
+2.7.0 (2025-01-22)
+------------------
+
+2.6.0 (2025-01-16)
+------------------
+* Merge branch 'tpe/simplify-3d-model' into 'humble-devel'
+  Simplify 3d meshes
+  See merge request robots/omni_base_robot!54
+* Simplify 3d meshes
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
+2.5.2 (2024-11-22)
+------------------
+
+2.5.1 (2024-11-08)
+------------------
+* Remove add_module_on from test
+* Add xacro tests
+* Contributors: Aina
+
+2.5.0 (2024-11-06)
+------------------
+
+2.4.2 (2024-10-18)
+------------------
+* Merge branch 'tpe/fix_base_inertia' into 'humble-devel'
+  Remove unwanter base inertia
+  See merge request robots/omni_base_robot!46
+* Remove unwanter base inertia
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
 2.4.1 (2024-10-15)
 ------------------
 
