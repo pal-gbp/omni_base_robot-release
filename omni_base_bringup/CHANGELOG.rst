@@ -2,6 +2,38 @@
 Changelog for package omni_base_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.9.0 (2025-02-24)
+------------------
+* updated maintainer
+* update locks topics and teleop to integrate assisted_teleop
+* Contributors: andreacapodacqua
+
+2.8.0 (2025-01-23)
+------------------
+* support cobra and camera model
+* Contributors: antoniobrandi
+
+2.7.0 (2025-01-22)
+------------------
+* updated docking vel and lock topics
+* lock robot if charging
+* Contributors: antoniobrandi
+
+2.6.0 (2025-01-16)
+------------------
+
+2.5.2 (2024-11-22)
+------------------
+
+2.5.1 (2024-11-08)
+------------------
+
+2.5.0 (2024-11-06)
+------------------
+
+2.4.2 (2024-10-18)
+------------------
+
 2.4.1 (2024-10-15)
 ------------------
 * Merge branch 'fix/aca/joy-turbo' into 'humble-devel'
