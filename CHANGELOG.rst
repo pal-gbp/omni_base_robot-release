@@ -2,6 +2,14 @@
 Changelog for package omni_base_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.10.1 (2025-04-09)
+-------------------
+
+2.10.0 (2025-03-25)
+-------------------
+* added tab_vel removed marker_vel
+* Contributors: andreacapodacqua
+
 2.9.0 (2025-02-24)
 ------------------
 * updated maintainer
