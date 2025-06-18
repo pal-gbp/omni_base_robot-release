@@ -19,6 +19,8 @@ from ament_index_python.packages import get_package_share_directory
 from controller_manager.launch_utils import generate_load_controller_launch_description
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, GroupAction
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import PushRosNamespace
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.include_utils import include_scoped_launch_py_description
@@ -28,6 +30,7 @@ from launch_pal.include_utils import include_scoped_launch_py_description
 class LaunchArguments(LaunchArgumentsBase):
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
+    namespace: DeclareLaunchArgument = CommonArgs.namespace
 
 
 def generate_launch_description():
@@ -56,6 +59,7 @@ def declare_actions(
         launch_arguments={
             'use_sim_time': launch_args.use_sim_time,
             'is_public_sim': launch_args.is_public_sim,
+            'namespace': launch_args.namespace,
         }
     )
     launch_description.add_action(base_controller)
@@ -63,6 +67,7 @@ def declare_actions(
     # Joint state broadcaster
     joint_state_broadcaster = GroupAction(
         [
+            PushRosNamespace(LaunchConfiguration('namespace')),
             generate_load_controller_launch_description(
                 controller_name='joint_state_broadcaster',
                 controller_params_file=os.path.join(
@@ -70,17 +75,5 @@ def declare_actions(
         ],
     )
     launch_description.add_action(joint_state_broadcaster)
-
-    # IMU sensor broadcaster
-    imu_sensor_broadcaster = GroupAction(
-        [
-            generate_load_controller_launch_description(
-                controller_name='imu_sensor_broadcaster',
-                controller_params_file=os.path.join(
-                    pkg_share_folder, 'config', 'imu_sensor_broadcaster.yaml'))
-
-        ],
-    )
-    launch_description.add_action(imu_sensor_broadcaster)
 
     return
