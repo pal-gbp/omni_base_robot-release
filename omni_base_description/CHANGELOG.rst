@@ -2,6 +2,37 @@
 Changelog for package omni_base_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.12.0 (2025-06-17)
+-------------------
+* uniform namespaces in URDF
+* support namespaces for control
+* init support to namespaces
+* Contributors: antoniobrandi
+
+2.11.0 (2025-06-13)
+-------------------
+* typo
+* update inertia
+* changed name from camera_on_top to camera_horizon_add_on
+* added mesh and position of camera on top
+* single camera integration
+* Contributors: andreacapodacqua
+
+2.10.3 (2025-06-11)
+-------------------
+* Change path related to restructure path for pal_urdf_utils
+* Change path from sensor courier to add_on cameras
+* Delete sensors files
+* Change path for hokuyo and courier
+* Change path for sick lasers
+* Change urdf for imu and imu gazebo
+* Contributors: Aina
+
+2.10.2 (2025-06-11)
+-------------------
+* Remove unused ros2_control imu
+* Contributors: Noel Jimenez
+
 2.10.1 (2025-04-09)
 -------------------
 * Merge branch 'tpe/imu_fix' into 'humble-devel'
