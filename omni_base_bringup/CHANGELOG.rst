@@ -2,6 +2,23 @@
 Changelog for package omni_base_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.12.0 (2025-06-17)
+-------------------
+* configure joystick_relay with namespaces
+* fix twist_mux with namespaces
+* start twist mux with namespace
+* init support to namespaces
+* Contributors: antoniobrandi
+
+2.11.0 (2025-06-13)
+-------------------
+
+2.10.3 (2025-06-11)
+-------------------
+
+2.10.2 (2025-06-11)
+-------------------
+
 2.10.1 (2025-04-09)
 -------------------
 
