@@ -2,6 +2,25 @@
 Changelog for package omni_base_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.12.0 (2025-06-17)
+-------------------
+* fix twist_mux with namespaces
+* missing launch argument
+* support namespaces for control
+* init support to namespaces
+* Contributors: antoniobrandi
+
+2.11.0 (2025-06-13)
+-------------------
+
+2.10.3 (2025-06-11)
+-------------------
+
+2.10.2 (2025-06-11)
+-------------------
+* Remove unused ros2_control imu
+* Contributors: Noel Jimenez
+
 2.10.1 (2025-04-09)
 -------------------
 
