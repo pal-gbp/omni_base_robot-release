@@ -2,6 +2,38 @@
 Changelog for package omni_base_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.14.1 (2025-08-28)
+-------------------
+* Update 2 files
+  - /omni_base_description/urdf/cameras_add_on/camera_horizon_add_on.urdf.xacro
+  - /omni_base_description/urdf/cameras_add_on/cameras.urdf.xacro
+* Contributors: antoniobrandi
+
+2.14.0 (2025-08-27)
+-------------------
+* remove realsense overlay
+* Contributors: antoniobrandi
+
+2.13.2 (2025-07-23)
+-------------------
+* Merge branch 'tpe/update_wheel_max_vel' into 'humble-devel'
+  Increase Wheel max velocity
+  See merge request robots/omni_base_robot!75
+* Remove params from ros2control
+* increase max an min vel
+* move comment due to bug
+* remove radius
+* Increase Wheel max velocity
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
+2.13.1 (2025-07-09)
+-------------------
+* fix use_sim_time
+* Contributors: andreacapodacqua
+
+2.13.0 (2025-07-09)
+-------------------
+
 2.12.0 (2025-06-17)
 -------------------
 * uniform namespaces in URDF
